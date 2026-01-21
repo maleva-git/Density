@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import logo from '../assets/logo.png';
+
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,8 +28,8 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 bg-gradient-to-br from-[#2662b0] to-[#1d4a85] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-              <span className="text-white font-bold text-2xl">D</span>
+            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 p-1">
+              <img src={logo} alt="Density Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <div className="font-bold text-xl text-gray-900">
