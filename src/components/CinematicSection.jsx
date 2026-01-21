@@ -131,7 +131,6 @@ const CinematicSection = () => {
       <ServicesShowcase />
     </>
   );
-  );
 };
 
 export default CinematicSection;

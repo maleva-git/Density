@@ -170,13 +170,11 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/contact"
-                onClick={() => setShowModal(false)}
+              <button
                 className="flex-1 bg-gradient-to-r from-[#2662b0] to-[#1d4a85] hover:from-[#1d4a85] hover:to-[#2662b0] text-white text-center px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
               >
                 Schedule a Demo
-              </Link>
+              </button>
               <button
                 onClick={() => setShowModal(false)}
                 className="flex-1 border-2 border-gray-300 hover:border-[#2662b0] text-gray-700 hover:text-[#2662b0] px-8 py-4 rounded-full font-bold text-lg transition-all duration-300"
