@@ -4,7 +4,7 @@ import serviceImg1 from '../../assets/home/image1 (10).webp';
 import serviceImg2 from '../../assets/home/image1 (11).webp';
 import serviceImg3 from '../../assets/home/image1 (5).webp';
 import serviceImg4 from '../../assets/home/image1 (6).webp';
-import serviceImg5 from '../../assets/home/image1 (7).webp';
+import serviceImg5 from '../../assets/home/image7.webp';
 import portImg from '../../assets/home/image23.webp';
 import vesselImg from '../../assets/services/shipsagency_197693966_16-9.webp';
 import cargoImg from '../../assets/services/sea-freight-aerial-view-cargo-ship-cargo-container-harbor.webp';

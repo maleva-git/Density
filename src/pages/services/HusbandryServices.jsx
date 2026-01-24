@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import heroImg from '../../assets/services/page-1_img01.webp';
 import serviceImg1 from '../../assets/home/image1 (3).webp';
 import serviceImg2 from '../../assets/home/image1 (4).webp';
-import serviceImg3 from '../../assets/home/image1 (8).webp';
+import serviceImg3 from '../../assets/home/image8.webp';
 import serviceImg4 from '../../assets/home/image1 (9).webp';
 import serviceImg5 from '../../assets/home/image1 (2).webp';
 import vesselImg from '../../assets/services/Seaharbour-LR-108-1024x682.webp';
