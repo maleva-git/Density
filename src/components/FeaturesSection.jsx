@@ -13,7 +13,7 @@ const FeaturesSection = () => {
             Why Choose Density
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Maritime Excellence <span className="text-[#2662b0]">Delivered</span>
+          Precision in Every Move <span className="text-[#2662b0]">Delivered</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Experience unparalleled maritime agency services with our comprehensive solutions

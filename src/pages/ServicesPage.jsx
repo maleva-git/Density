@@ -32,7 +32,7 @@ const ServicesPage = () => {
       description: 'Bunkering coordination, ship spares delivery, provisions supply, and technical logistics keeping your vessel operational.',
       image: technicalImg,
       link: '/services/technical-supply-logistics-malaysia',
-      features: ['Bunkering Services', 'Ship Spares', 'Provisions', 'Water Supply']
+      features: ['Bunkering Services', 'Ship Spares', 'Provisions', 'Fresh Water Supply']
     },
     {
       title: 'Protecting Agency (OPA)',

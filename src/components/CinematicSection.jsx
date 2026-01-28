@@ -87,7 +87,7 @@ const CinematicSection = () => {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <img
                   src={cinematicBg}
-                  alt="Maritime excellence"
+                  alt="Precision in Every Move"
                   className="w-full h-[600px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

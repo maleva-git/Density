@@ -36,7 +36,7 @@ const Header = () => {
                 Density (M) Sdn Bhd
               </div>
               <div className="text-xs font-medium text-gray-600">
-                Maritime Excellence
+              Precision in Every Move
               </div>
             </div>
           </Link>
@@ -67,14 +67,7 @@ const Header = () => {
             >
               About
             </Link>
-            <Link
-              to="/ports"
-              className={`font-semibold transition-colors ${
-                isActive('/ports') ? 'text-[#2662b0]' : 'text-gray-900 hover:text-[#2662b0]'
-              }`}
-            >
-              Port Coverage
-            </Link>
+          
             <Link
               to="/contact"
               className="bg-gradient-to-r from-[#2662b0] to-[#1d4a85] hover:from-[#1d4a85] hover:to-[#2662b0] text-white px-6 py-2.5 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"

@@ -1,9 +1,12 @@
-import serviceImage1 from '../assets/home/image1 (1).webp';
-import serviceImage2 from '../assets/home/image1 (2).webp';
-import serviceImage3 from '../assets/home/image1 (3).webp';
-import serviceImage4 from '../assets/home/image1 (4).webp';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import serviceImage1 from '../assets/home/fullportagency.jfif';
+import serviceImage2 from '../assets/home/husbandryservices.webp';
+import serviceImage3 from '../assets/home/techinacialsupplylogistic.webp';
+import serviceImage4 from '../assets/home/productingagency.webp';
 
 const Services = () => {
+  const [expandedIndex, setExpandedIndex] = useState(0);
   const services = [
     {
       icon: (
@@ -14,7 +17,8 @@ const Services = () => {
       title: 'Full Port Agency',
       description: 'A seamless bridge between ship and shore. We handle every detail — documentation, port formalities, berthing coordination, and cargo oversight — ensuring smooth and delay-free port operations.',
       image: serviceImage1,
-      features: ['Documentation handling', 'Berthing coordination', 'Cargo oversight', 'Port formalities']
+      link: '/services/full-port-agency-malaysia',
+      features: ['Documentation handling', 'Berthing coordination', 'Cargo oversight']
     },
     {
       icon: (
@@ -25,7 +29,8 @@ const Services = () => {
       title: 'Husbandry Services',
       description: 'Your crew\'s home away from home. From crew changes and medical assistance to secure cash handling, we take care of the people who keep your vessel moving.',
       image: serviceImage2,
-      features: ['Crew changes', 'Medical assistance', 'Cash handling', 'Provisions']
+      link: '/services/husbandry-services-malaysia',
+      features: ['Crew changes', 'Medical assistance',' Cash handling','Provisions']
     },
     {
       icon: (
@@ -34,10 +39,11 @@ const Services = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: 'Technical & Supply Logistics',
+      title: 'Technical & Supply',
       description: 'Keeping your vessel operational and voyage-ready. We coordinate bunkering, ship spares, provisions, and last-mile logistics with speed and accuracy.',
       image: serviceImage3,
-      features: ['Bunkering coordination', 'Ship spares', 'Provisions supply', 'Last-mile logistics']
+      link: '/services/technical-supply-logistics-malaysia',
+      features: ['Bunkering coordination','Ship spares','Provisions supply','Last-mile logistics']
     },
     {
       icon: (
@@ -45,84 +51,159 @@ const Services = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
         </svg>
       ),
-      title: 'Protecting Agency (OPA)',
+      title: 'Protecting Agency',
       description: 'Independent oversight. Total peace of mind. We safeguard shipowners\' interests through cost verification, operational monitoring, and dispute resolution.',
       image: serviceImage4,
-      features: ['Cost verification', 'Operational monitoring', 'Dispute resolution', 'Independent oversight']
+      link: '/services/protecting-agency-malaysia',
+      features: ['Cost verification','Operational monitoring','Dispute resolution','Independent oversight']
     }
   ];
 
   return (
-    <section id="services" className="py-24 bg-gray-50">
+    <section id="services" className="py-24 bg-white">
       <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-[#2662b0] font-bold text-sm tracking-wider uppercase">What We Do Best</span>
-          <h2 className="text-5xl font-bold text-gray-900 mt-4 mb-6">Our Specialized Services</h2>
-          <p className="text-xl text-[#9a9b9d] max-w-3xl mx-auto">
-            We offer full-service coverage from documentation to delivery, designed for time-sensitive maritime operations
-          </p>
+        <div className="grid lg:grid-cols-2 gap-12 items-start">
+          {/* Left Side - Large Image */}
+          <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+            <img
+              src={services[expandedIndex].image}
+              alt={services[expandedIndex].title}
+              className="w-full h-full object-cover transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            <div className="absolute bottom-8 left-8 right-8 text-white ">
+              <h2 className="text-4xl font-bold mb-3">{services[expandedIndex].title}</h2>
+              <p className="text-lg text-white ">{services[expandedIndex].description}</p>
+            </div>
+          </div>
+
+          {/* Right Side - Service Cards */}
+          <div className="space-y-4">
+            <div className="mb-8">
+              <h2 className="text-4xl font-bold text-gray-900  mb-4">Our Specialized Services</h2>
+              <p className="text-xl text-gray-900 ">
+                We offer full-service coverage from documentation to delivery, designed for time-sensitive maritime operations
+              </p>
+            </div>
+
+            {services.map((service, index) => (
+  <div
+    key={index}
+    onClick={() => setExpandedIndex(index)}
+    className={`rounded-xl cursor-pointer transition-all duration-500 border
+      ${
+        expandedIndex === index
+          ? 'bg-[#3377ca] border-[#3377ca] shadow-xl'
+          : 'bg-white border-[#1f4f8f] hover:bg-[#1555f3]/5'
+      }`}
+  >
+    <div className="p-6">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-4">
+
+          {/* ICON */}
+          <div
+            className={`p-3 rounded-xl transition-all
+              ${
+                expandedIndex === index
+                  ? 'bg-white/20 text-white'
+                  : 'bg-[#1555f3]/10 text-[#1555f3]'
+              }`}
+          >
+            {service.icon}
+          </div>
+
+          {/* TITLE */}
+          <h3
+            className={`text-xl font-bold transition-colors
+              ${
+                expandedIndex === index
+                  ? 'text-white'
+                  : 'text-black'
+              }`}
+          >
+            {service.title}
+          </h3>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 gap-10">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group bg-white rounded-3xl overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.08)] hover:shadow-[0_20px_60px_rgba(38,98,176,0.15)] transition-all duration-700 hover:-translate-y-4 border border-gray-100 hover:border-[#2662b0]/30"
-              style={{
-                animation: `scaleIn 0.6s ease-out ${index * 0.15}s forwards`,
-                opacity: 0
-              }}
-            >
-              <div className="relative h-72 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-[1000ms] ease-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent group-hover:from-black/80 transition-all duration-500"></div>
-                
-                {/* Animated Icon */}
-                <div className="absolute top-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-2xl border border-white/20 group-hover:bg-[#2662b0] group-hover:scale-110 transition-all duration-500">
-                  <div className="text-white group-hover:rotate-12 transition-transform duration-500">
-                    {service.icon}
-                  </div>
-                </div>
-                
-                {/* Title */}
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <h3 className="text-3xl font-bold group-hover:translate-x-2 transition-transform duration-500 drop-shadow-lg">{service.title}</h3>
-                </div>
-              </div>
-              
-              <div className="p-8">
-                <p className="text-[#9a9b9d] leading-relaxed mb-8 text-base">
-                  {service.description}
-                </p>
-                
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  {service.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center text-sm text-gray-700 group/item hover:text-[#2662b0] transition-colors duration-300">
-                      <div className="w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center mr-3 group-hover/item:bg-[#2662b0] group-hover/item:scale-110 transition-all duration-300">
-                        <svg className="w-3 h-3 text-[#2662b0] group-hover/item:text-white transition-colors" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+        {/* ARROW */}
+        <svg
+          className={`w-6 h-6 transition-transform duration-300
+            ${
+              expandedIndex === index
+                ? 'rotate-90 text-white'
+                : 'text-[#1f4f8f]'
+            }`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </div>
 
-                <button className="mt-4 text-[#2662b0] font-bold flex items-center group-hover:translate-x-3 transition-transform duration-500 text-base">
-                  Learn more
-                  <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
+      {/* EXPANDED CONTENT */}
+      <div
+        className={`overflow-hidden transition-all duration-500
+          ${
+            expandedIndex === index
+              ? 'max-h-96 opacity-100 mt-4'
+              : 'max-h-0 opacity-0'
+          }`}
+      >
+        {service.features.length > 0 && (
+          <div className="space-y-2">
+            {service.features.map((feature, idx) => (
+              <div
+                key={idx}
+                className={`flex items-center
+                  ${
+                    expandedIndex === index
+                      ? 'text-white'
+                      : 'text-black'
+                  }`}
+              >
+               <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#1555f3] mr-3 flex-shrink-0">
+      <svg
+        className="w-4 h-4 text-white"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M5 13l4 4L19 7"
+        />
+      </svg>
+    </span>
+                {feature}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+))}
+
+
+            <Link
+              to="/services"
+              className="inline-flex items-center text-[#2662b0] bg-white px-6 py-3 rounded-full font-bold mt-6 hover:bg-gray-100 transition-all duration-300"
+            >
+              Learn more
+              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

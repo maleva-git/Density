@@ -111,7 +111,7 @@ const Hero = () => {
 
             {/* Content */}
             <h2 className="text-4xl font-bold text-gray-900 text-center mb-4">
-              Discover Maritime Excellence
+              Discover Precision in Every Move
             </h2>
             <p className="text-xl text-[#9a9b9d] text-center mb-8 leading-relaxed">
               See how Density (M) Sdn Bhd transforms port operations with our comprehensive vessel agency services.

@@ -1,4 +1,4 @@
-import portImage from '../assets/home/image1 (6).webp';
+import portImage from '../assets/home/everyport.webp';
 
 const PortCoverage = () => {
   const westMalaysia = [

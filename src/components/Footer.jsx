@@ -13,7 +13,7 @@ const Footer = () => {
               </div>
               <div>
                 <div className="font-bold text-xl">Density (M) Sdn Bhd</div>
-                <div className="text-sm text-gray-400">Maritime Excellence</div>
+                <div className="text-sm text-gray-400">Precision in Every Move</div>
               </div>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed max-w-md">

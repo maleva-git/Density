@@ -1,7 +1,7 @@
-import image5 from '../assets/home/image1 (5).webp';
-import image6 from '../assets/home/image1 (6).webp';
-import image7 from '../assets/home/image1 (9).webp';
-import image8 from '../assets/home/image1 (10).webp';
+import image5 from '../assets/home/comparisioncargoslution.webp';
+import image6 from '../assets/home/vesalhurbency.webp';
+import image7 from '../assets/home/shiprepairandamatiance.webp';
+import image8 from '../assets/home/logisticandsupply.webp';
 
 const ServicesShowcase = () => {
   const services = [
